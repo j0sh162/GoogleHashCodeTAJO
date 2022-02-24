@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ParsingData {
     public static void readFile() {
         try {
-            File inputFile = new File("A.txt");
+            File inputFile = new File("a_an_example.in.txt");
             Scanner scanFile = new Scanner(inputFile);
 
             int noP = scanFile.nextInt();
@@ -30,12 +30,17 @@ public class ParsingData {
                 for (String skills : skillz) {
                     Main.hm.get(skills).add(p);
                 }
+
+                noP--;
             }
 
             while (noProj > 0) {
                 String name = scanFile.next();
+                System.out.println(name);
                 int days = scanFile.nextInt();
+                System.out.println(days);
                 int score = scanFile.nextInt();
+                System.out.println(score);
                 int bestBefore = scanFile.nextInt();
                 int noRoles = scanFile.nextInt();
 
@@ -46,6 +51,8 @@ public class ParsingData {
                 }
 
                 Main.ps.add(proj);
+
+                noProj--;
             }
 
             scanFile.close();
