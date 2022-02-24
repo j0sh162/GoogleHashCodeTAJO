@@ -16,4 +16,7 @@ public class Person {
     public boolean getUsed(){
         return used;
     }
+    public String getName() {
+        return name;
+    }
 }

@@ -51,5 +51,8 @@ class Project{
     }
     public ArrayList<Person> getPersonsOnProject(){
         return personsOnProject;
+    } 
+    public String getName() {
+        return name;
     }
 }
