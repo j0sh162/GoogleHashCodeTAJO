@@ -36,6 +36,14 @@ class Project{
     public ArrayList<String> getRoles() {
         return roles;
     }
-
+    public double getRating() {
+        return rating;
+    }
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
 }
