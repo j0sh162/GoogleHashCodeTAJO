@@ -12,25 +12,27 @@ public class ParsingData {
             int noP = scanFile.nextInt();
             int noProj = scanFile.nextInt();
 
-            while(noP > 0) {
+            while (noP > 0) {
                 String name = scanFile.next();
                 int noSkillz = scanFile.nextInt();
                 String[] skillz = new String[noSkillz];
 
-                for(int i = 0; i < noSkillz; i++) {
+                for (int i = 0; i < noSkillz; i++) {
                     String s = scanFile.nextLine();
                     skillz[i] = s;
-                    if(!Main.hm.containsKey(s)){
-                        Main.hm.put(s,new LinkedList<Person>());
+                    if (!Main.hm.containsKey(s)) {
+                        Main.hm.put(s, new LinkedList<Person>());
                     }
                 }
-                Person p = new Person(name,skillz);
+
+                Person p = new Person(name, skillz);
+
                 for (String skills : skillz) {
                     Main.hm.get(skills).add(p);
                 }
             }
 
-            while(noProj > 0) {
+            while (noProj > 0) {
                 String name = scanFile.next();
                 int days = scanFile.nextInt();
                 int score = scanFile.nextInt();
@@ -39,10 +41,14 @@ public class ParsingData {
 
                 Project proj = new Project(name, days, score, bestBefore, noRoles);
 
-                for(int i = 0; i < noRoles; i++) {
+                for (int i = 0; i < noRoles; i++) {
                     proj.addRole(scanFile.nextLine());
                 }
+
+                Main.ps.add(proj);
             }
+
+            scanFile.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
