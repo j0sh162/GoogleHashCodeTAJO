@@ -8,6 +8,7 @@ class Project{
     private ArrayList<String> roles;
     private double rating = 0.0;
     private boolean done = false;
+    private ArrayList<Person> personsOnProject;
 
     public Project(String nameIn, int durationIn, int scoreIn, int bestBeforeIn, int amountRoles){
         roles = new ArrayList<>(amountRoles);
@@ -45,5 +46,13 @@ class Project{
     public void setRating(double rating) {
         this.rating = rating;
     }
-
+    public boolean getDone(){
+        return done;
+    }
+    public ArrayList<Person> getPersonsOnProject(){
+        return personsOnProject;
+    } 
+    public String getName() {
+        return name;
+    }
 }
