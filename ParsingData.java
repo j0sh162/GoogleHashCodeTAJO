@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ParsingData {
@@ -17,10 +18,16 @@ public class ParsingData {
                 String[] skillz = new String[noSkillz];
 
                 for(int i = 0; i < noSkillz; i++) {
-                    skillz[i] = scanFile.nextLine();
+                    String s = scanFile.nextLine();
+                    skillz[i] = s;
+                    if(!Main.hm.containsKey(s)){
+                        Main.hm.put(s,new LinkedList<Person>());
+                    }
                 }
-
-                Person p = new Person(name, skillz);
+                Person p = new Person(name,skillz);
+                for (String skills : skillz) {
+                    Main.hm.get(skills).add(p);
+                }
             }
 
             while(noProj > 0) {

@@ -1,0 +1,22 @@
+|>
+==>
+take in the projects
+
+give score based specific factors(How long,due d, socre, players,player level) kinda same thing
+
+d = days to be done
+dd = due date
+s = score
+p = player
+pl = player level 
+
+
+
+Socre = how many days till due date s* d*dd/pl p   
+sort them based on score{Score, project}
+ 
+project complete we do an update
+
+
+
+assign based on this score

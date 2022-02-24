@@ -6,6 +6,8 @@ class Project{
     private int score;
     private int bestBefore;
     private ArrayList<String> roles;
+    private double rating = 0.0;
+    private boolean done = false;
 
     public Project(String nameIn, int durationIn, int scoreIn, int bestBeforeIn, int amountRoles){
         roles = new ArrayList<>(amountRoles);
@@ -35,10 +37,5 @@ class Project{
         return roles;
     }
 
-    public void update(int i){
-        if(i<bestBefore){
-            score = (i-bestBefore);
-        }
-    }
 
 }

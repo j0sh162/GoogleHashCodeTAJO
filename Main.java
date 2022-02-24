@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -5,9 +6,10 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main{
+    public static HashMap<String, LinkedList<Person>> hm = new HashMap<String,LinkedList<Person>>();
+    public static ArrayList<Project> ps;
     public static void main(String[] args) {
         Scanner s = new Scanner("b_better_start_small.in");
-        HashMap<String, LinkedList<Person>> hm = new HashMap<String,LinkedList<Person>>();
         
         String [] test = {"r","s"};
         Person p = new Person("a",test);
@@ -23,5 +25,9 @@ public class Main{
         
 
     }
+    public void update(int i){
+        
+    }
+
 
 }
