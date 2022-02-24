@@ -11,14 +11,15 @@ public class Main {
     public static int currentDay = 0;
 
     public static void main(String[] args) {
-
+        ParsingData.readFile();
         System.out.println(hm.toString());
+        /*
         // after intiale parsing
         while (true) {
             rate();
             currentDay++;
         }
-
+        */
     }
 
     public static void rate() {
