@@ -8,6 +8,8 @@ class Project{
     private ArrayList<String> roles;
     private double rating = 0.0;
     private boolean done = false;
+    private boolean workedon = false;
+
     private ArrayList<Person> personsOnProject;
 
     public Project(String nameIn, int durationIn, int scoreIn, int bestBeforeIn, int amountRoles){
@@ -51,5 +53,14 @@ class Project{
     }
     public ArrayList<Person> getPersonsOnProject(){
         return personsOnProject;
+    }
+    public boolean isWorkedon() {
+        return workedon;
+    }
+    public void setWorkedon(boolean workedon) {
+        this.workedon = workedon;
+    }
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }
