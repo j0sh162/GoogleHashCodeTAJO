@@ -12,8 +12,9 @@ public class Main {
     public static int finalDay;//Update when andra done
 
     public static void main(String[] args) {
-
+        ParsingData.readFile();
         System.out.println(hm.toString());
+        /*
         // after intiale parsing
         
         for (int i = 0; i < finalDay; i++) {
@@ -22,6 +23,7 @@ public class Main {
             currentDay++;
         }
         //Call output method
+        */
     }
 
     public static void rate() {

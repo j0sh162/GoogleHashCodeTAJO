@@ -53,6 +53,9 @@ class Project{
     }
     public ArrayList<Person> getPersonsOnProject(){
         return personsOnProject;
+    } 
+    public String getName() {
+        return name;
     }
     public boolean isWorkedon() {
         return workedon;
