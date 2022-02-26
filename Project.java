@@ -12,8 +12,8 @@ class Project{
 
     private ArrayList<Person> personsOnProject;
 
-    public Project(String nameIn, int durationIn, int scoreIn, int bestBeforeIn, int amountRoles){
-        roles = new ArrayList<>(amountRoles);
+    public Project(String nameIn, int durationIn, int scoreIn, int bestBeforeIn, ArrayList<String> amountRoles){
+        roles = amountRoles;
         name = nameIn;
         duration = durationIn;
         score = scoreIn;

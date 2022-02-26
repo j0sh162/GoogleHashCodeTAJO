@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Main {
     public static HashMap<String, LinkedList<Person>> hm = new HashMap<String, LinkedList<Person>>();
-    public static ArrayList<Project> ps;
+    public static ArrayList<Project> ps = new ArrayList<>();
     public static int currentDay = 0;
-    public static int finalDay;//Update when andra done
+    public static int finalDay = 10;//Update when andra done
 
     public static void main(String[] args) {
         ParsingData.readFile();
         System.out.println(hm.toString());
-        /*
+
         // after intiale parsing
         
         for (int i = 0; i < finalDay; i++) {
@@ -23,7 +23,7 @@ public class Main {
             currentDay++;
         }
         //Call output method
-        */
+
     }
 
     public static void rate() {

@@ -1,8 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
-
+@SuppressWarnings("unused")
 public class ParsingData {
     public static void readFile() {
         try {
@@ -18,6 +19,7 @@ public class ParsingData {
             Scanner scanFile = new Scanner(inputFile);
             String text ="";
             boolean first = true;
+
             int noP = 0;
             int noProj = 0;
 
@@ -27,9 +29,41 @@ public class ParsingData {
                     String[] temp = scanFile.nextLine().split(" ");
                     noP = Integer.parseInt(temp[0]);
                     noProj = Integer.parseInt(temp[1]);
+                    first = false;
                     continue;
-                }
 
+                }
+                for(int j = 0;j<noP;j++) {
+                    name = scanFile.nextLine();
+                    String[] temp = name.split(" ");
+                    int lines = Integer.parseInt(temp[1]);
+                    String[] skills = new String[lines];
+                    for (int i = 0; i < lines; i++) {
+                        String s = scanFile.nextLine();
+                        skills[i] = s;
+                        if (!Main.hm.containsKey(s)) {
+                            Main.hm.put(s, new LinkedList<Person>());
+                        }
+                    }
+
+                    Person p = new Person(name, skills);
+                    for (String skill : skills) {
+                        Main.hm.get(skill).add(p);
+                    }
+                }
+                for (int i = 0; i < noProj; i++) {
+                    String[] proj = scanFile.nextLine().split(" ");
+
+                    int lines = Integer.parseInt(proj[proj.length-1]);
+                    ArrayList<String> skills = new ArrayList<>();
+
+                    for (int j = 0; j < lines; j++) {
+                        String s = scanFile.nextLine();
+                        skills.add(s);
+                    }
+                    Main.ps.add(new Project(proj[0],Integer.parseInt(proj[1]),Integer.parseInt(proj[2]),Integer.parseInt(proj[3]),skills));
+
+                }
             }
 
           
